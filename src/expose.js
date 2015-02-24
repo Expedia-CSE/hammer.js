@@ -51,11 +51,13 @@ extend(Hammer, {
 });
 
 if (typeof define == TYPE_FUNCTION && define.amd) {
-    define(function() {
+    //manually make AMD ID 'Hammer'
+    define(exportName, function() {
         return Hammer;
     });
 } else if (typeof module != 'undefined' && module.exports) {
     module.exports = Hammer;
-} else {
-    window[exportName] = Hammer;
 }
+
+//always expose as global object for pages that only partly use AMD
+window[exportName] = Hammer;
