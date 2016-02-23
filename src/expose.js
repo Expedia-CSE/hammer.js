@@ -51,8 +51,8 @@ extend(Hammer, {
 });
 
 if (typeof define == TYPE_FUNCTION && define.amd) {
-    //manually make AMD ID 'Hammer'
-    define(exportName, function() {
+    //manually make AMD ID 'hammer'
+    define('hammer', function() {
         return Hammer;
     });
 } else if (typeof module != 'undefined' && module.exports) {
